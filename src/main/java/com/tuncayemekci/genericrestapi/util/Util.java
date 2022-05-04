@@ -1,5 +1,7 @@
 package com.tuncayemekci.genericrestapi.util;
 
+import java.util.Random;
+
 public class Util {
 
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -61,6 +63,61 @@ public class Util {
 
     public static String generateRandomPhoneNumber() {
         return "+9053" + generateRandomNumeric(8);
+    }
+
+    public static String getFormattedValue(String value) {
+        Random random = new Random();
+        Integer randomValue = random.nextInt(100);
+
+        if (value.equalsIgnoreCase("string")) {
+            return generateAlpha(10);
+        }
+
+        if (value.equalsIgnoreCase("int")) {
+            return String.valueOf(randomValue);
+        }
+
+        if (value.equalsIgnoreCase("long")) {
+            return String.valueOf(randomValue);
+        }
+
+        if (value.equalsIgnoreCase("double")) {
+            return String.valueOf(randomValue);
+        }
+
+        if (value.equalsIgnoreCase("float")) {
+            return String.valueOf(randomValue);
+        }
+
+        if (value.equalsIgnoreCase("boolean")) {
+            return randomValue > 50 ? "true" : "false";
+        }
+
+        if (value.equalsIgnoreCase("name")) {
+            return generateRandomPersonName();
+        }
+
+        if (value.equalsIgnoreCase("surname")) {
+            return generateRandomPersonSurname();
+        }
+
+        if (value.equalsIgnoreCase("username")) {
+            return generateRandomUsername();
+        }
+
+        if (value.equalsIgnoreCase("email")) {
+            return generateRandomEmail();
+        }
+
+        if (value.equalsIgnoreCase("password")) {
+            return generateRandomPassword();
+        }
+
+        if (value.equalsIgnoreCase("phone")) {
+            return generateRandomPhoneNumber();
+        }
+
+        return value;
     }
 
 

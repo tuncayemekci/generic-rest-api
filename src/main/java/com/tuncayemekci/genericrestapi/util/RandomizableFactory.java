@@ -1,7 +1,8 @@
-package com.tuncayemekci.genericrestapi.randomizable;
+package com.tuncayemekci.genericrestapi.util;
 
-import com.tuncayemekci.genericrestapi.randomizable.model.Customer;
-import com.tuncayemekci.genericrestapi.randomizable.model.User;
+import com.tuncayemekci.genericrestapi.model.Customer;
+import com.tuncayemekci.genericrestapi.model.Randomizable;
+import com.tuncayemekci.genericrestapi.model.User;
 import lombok.NonNull;
 
 import java.util.Locale;

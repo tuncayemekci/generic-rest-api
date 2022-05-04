@@ -1,4 +1,4 @@
-package com.tuncayemekci.genericrestapi.randomizable;
+package com.tuncayemekci.genericrestapi.model;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,6 +1,5 @@
-package com.tuncayemekci.genericrestapi.randomizable.model;
+package com.tuncayemekci.genericrestapi.model;
 
-import com.tuncayemekci.genericrestapi.randomizable.Randomizable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,23 +11,25 @@ import java.util.Random;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Randomizable {
+public class Customer implements Randomizable {
 
     private Long id;
-    private String username;
+    private String name;
+    private String surname;
     private String email;
-    private String password;
+    private String phone;
 
     @Override
     public Randomizable randomize() {
         Random random = new Random();
         Integer randomValue = random.nextInt(100);
 
-        return User.builder()
+        return Customer.builder()
                 .id((long) (randomValue * 100))
-                .username("username" + randomValue)
+                .name("name" + randomValue)
+                .surname("surname" + randomValue)
                 .email("email" + randomValue + "@gmail.com")
-                .password("password" + randomValue)
+                .phone("+90532" + random.nextInt(10000000))
                 .build();
     }
 }
